@@ -1,30 +1,36 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- <div>This is From Home</div> -->
+  <router-view />
+
+  <div v-if="!isLoggedIn">
+    <template v-if="showLogIn">
+      <LoginView />
+    </template>
+    <template v-else>
+      <SignupView />
+    </template>
+    <div v-else>
+      <h2>Welcome</h2>
+    </div>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+// import SignupView from '@/views/SignupView.vue'
+// import LoginView from '@/views/LoginView.vue'
+
+// export default {
+//   components: { SignupView, LoginView },
+//   data() {
+//     return {
+//       isLoggedIn: false,
+//       showLogin: true
+//     }
+//   },
+// }
+
+
+</script>

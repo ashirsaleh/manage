@@ -1,10 +1,6 @@
-import { createApp } from 'vue'
-import './registerServiceWorker'
-import router from './router'
-import store from './store'
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import './assets/tailwind.css'
-import App from './App.vue'
+
 const firebaseConfig = {
     apiKey: "AIzaSyBuHT-EnDP8BhUuFDQoa0T17RYJ4tp3b-g",
     authDomain: "cool-bay-282923.firebaseapp.com",
@@ -15,5 +11,5 @@ const firebaseConfig = {
     measurementId: "G-LFXLQ77ZY0"
 };
 
-initializeApp(firebaseConfig);
-createApp(App).use(store).use(router).mount('#app')
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
